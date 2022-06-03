@@ -7,7 +7,11 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <div className={classes.header_container}>
-        <img className={classes.header_logo} src={companyLogo} />
+        <img
+          alt="Company Logo"
+          className={classes.header_logo}
+          src={companyLogo}
+        />
       </div>
     </header>
   );
