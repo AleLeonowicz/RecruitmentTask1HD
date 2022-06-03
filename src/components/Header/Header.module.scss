@@ -1,4 +1,16 @@
 .header {
   height: 130px;
   width: 100%;
+  display: flex;
+  align-items: center;
+
+  &_container {
+    width: 1400px;
+    margin: auto;
+  }
+
+  &_logo {
+    display: flex;
+    height: 100px;
+  }
 }

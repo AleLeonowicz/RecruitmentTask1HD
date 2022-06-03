@@ -1,0 +1,8 @@
+@import '../../variables.scss';
+
+.section {
+  background-color: $color-background;
+  //   height: 500px;
+  min-height: calc(100vh - 330px);
+  width: 100%;
+}
