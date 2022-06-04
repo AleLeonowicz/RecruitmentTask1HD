@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.cardHeader {
+  width: 100%;
+  height: 120px;
+  background-color: $color-blue-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    color: white;
+    font-size: 3.5rem;
+  }
+}

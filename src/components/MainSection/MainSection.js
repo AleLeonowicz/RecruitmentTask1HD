@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './MainSection.module.scss';
-import SectionContent from '../SectionContent/SectionContent';
+import Card from '../Card/Card';
 
 const MainSection = () => {
   return (
     <section className={classes.section}>
-      <SectionContent />
+      <Card />
     </section>
   );
 };
