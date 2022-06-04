@@ -1,220 +1,207 @@
 @import '../../variables.scss';
 
-// .cardContent {
-//   width: 100%;
-//   height: 530px;
-//   padding: 40px;
-// }
-
-// @keyframes tonext {
-//   75% {
-//     left: 0;
-//   }
-//   95% {
-//     left: 100%;
-//   }
-//   98% {
-//     left: 100%;
-//   }
-//   99% {
-//     left: 0;
-//   }
-// }
-
-// @keyframes tostart {
-//   75% {
-//     left: 0;
-//   }
-//   95% {
-//     left: -300%;
-//   }
-//   98% {
-//     left: -300%;
-//   }
-//   99% {
-//     left: 0;
-//   }
-// }
-
-// @keyframes snap {
-//   96% {
-//     scroll-snap-align: center;
-//   }
-//   97% {
-//     scroll-snap-align: none;
-//   }
-//   99% {
-//     scroll-snap-align: none;
-//   }
-//   100% {
-//     scroll-snap-align: center;
-//   }
-// }
-
-/////////////////////////////////////////////////////////
-
-// body {
-//   max-width: 37.5rem;
-//   margin: 0 auto;
-//   padding: 0 1.25rem;
-//   font-family: 'Lato', sans-serif;
-// }
-
-// * {
-//   box-sizing: border-box;
-//   scrollbar-color: transparent transparent; /* thumb and track color */
-//   scrollbar-width: 0px;
-// }
-
-// *::-webkit-scrollbar {
-//   width: 0;
-// }
-
-// *::-webkit-scrollbar-track {
-//   background: transparent;
-// }
-
-// *::-webkit-scrollbar-thumb {
-//   background: transparent;
-//   border: none;
-// }
-
-// * {
-//   -ms-overflow-style: none;
-// }
-
-///////////////////////////////////////////////////////////
-
-ol,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.carousel {
-  position: relative;
-
-  perspective: 100px;
+.carouselContainer {
+  width: 100%;
   height: 530px;
 
-  ::-webkit-scrollbar {
-    display: none;
+  &_buttonGroup {
+    position: absolute;
+  }
+
+  &_buttonLeft {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 40px;
+    top: -290px;
+    height: 50px;
+    width: 30px;
+
+    &:hover {
+      background-color: $color-grey;
+    }
+
+    &_disabled {
+      opacity: 0;
+      width: 30px;
+    }
+
+    & img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &_buttonRight {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 800px;
+    top: -290px;
+    height: 50px;
+    width: 30px;
+
+    &:hover {
+      background-color: $color-grey;
+    }
+
+    &_disabled {
+      opacity: 0;
+      width: 30px;
+    }
+
+    & img {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 
-.carousel__viewport {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  overflow-x: scroll;
-  counter-reset: item;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel__slide {
-  position: relative;
-  flex: 0 0 100%;
+.cardContent {
   width: 100%;
-  height: 100%;
-  background-color: #f99;
-  counter-increment: item;
+  height: 530px;
+  padding: 40px;
+  background-color: $color-orange-primary;
 }
-
-.carousel__slide:nth-child(even) {
-  background-color: #99f;
-}
-
-.carousel__slide:before {
-  content: counter(item);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -40%, 70px);
-  color: #fff;
-  font-size: 2em;
-}
-
-.carousel__snapper {
-  position: absolute;
-  top: 0;
-  left: 0;
+.cardContent2 {
   width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
+  height: 530px;
+  padding: 40px;
+  background-color: $color-orange-secondary;
 }
 
-@media (hover: hover) {
-  .carousel__snapper {
-    animation-name: tonext, snap;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-  }
+// ol,
+// li {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+// }
 
-  .carousel__slide:last-child .carousel__snapper {
-    animation-name: tostart, snap;
-  }
-}
+// .carousel {
+//   position: relative;
 
-@media (prefers-reduced-motion: reduce) {
-  .carousel__snapper {
-    animation-name: none;
-  }
-}
+//   perspective: 100px;
+//   height: 530px;
 
-.carousel:hover .carousel__snapper,
-.carousel:focus-within .carousel__snapper {
-  animation-name: none;
-}
+//   ::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
 
-.carousel__navigation {
-  position: absolute;
-  right: 0;
-  bottom: 30px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-}
+// .carousel__viewport {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   display: flex;
+//   overflow-x: scroll;
+//   counter-reset: item;
+//   scroll-behavior: smooth;
+//   scroll-snap-type: x mandatory;
+// }
 
-.carousel__navigation__list {
-  display: flex;
-  width: 90px;
-  justify-content: space-between;
-}
+// .carousel__slide {
+//   position: relative;
+//   flex: 0 0 100%;
+//   width: 100%;
+//   height: 100%;
+//   background-color: #f99;
+//   counter-increment: item;
+// }
 
-.carousel__navigation_circle {
-  width: 20px;
-}
+// .carousel__slide:nth-child(even) {
+//   background-color: #99f;
+// }
 
-.carousel__prev,
-.carousel__next {
-  position: absolute;
-  top: 265px;
-}
+// .carousel__slide:before {
+//   content: counter(item);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate3d(-50%, -40%, 70px);
+//   color: #fff;
+//   font-size: 2em;
+// }
 
-.carousel__prevBtn {
-  position: absolute;
-  left: 40px;
-  width: 40px;
-  height: 40px;
-}
+// .carousel__snapper {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   scroll-snap-align: center;
+// }
 
-.carousel__nextBtn {
-  position: absolute;
-  right: 40px;
-  width: 40px;
-  height: 40px;
-}
+// @media (hover: hover) {
+//   .carousel__snapper {
+//     animation-name: tonext, snap;
+//     animation-timing-function: ease;
+//     animation-duration: 4s;
+//     animation-iteration-count: infinite;
+//   }
 
-.carousel__prev {
-  left: -1rem;
-}
+//   .carousel__slide:last-child .carousel__snapper {
+//     animation-name: tostart, snap;
+//   }
+// }
 
-.carousel__next {
-  right: -1rem;
-}
+// @media (prefers-reduced-motion: reduce) {
+//   .carousel__snapper {
+//     animation-name: none;
+//   }
+// }
+
+// .carousel:hover .carousel__snapper,
+// .carousel:focus-within .carousel__snapper {
+//   animation-name: none;
+// }
+
+// .carousel__navigation {
+//   position: absolute;
+//   right: 0;
+//   bottom: 30px;
+//   left: 0;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .carousel__navigation__list {
+//   display: flex;
+//   width: 90px;
+//   justify-content: space-between;
+// }
+
+// .carousel__navigation_circle {
+//   width: 20px;
+// }
+
+// .carousel__prev,
+// .carousel__next {
+//   position: absolute;
+//   top: 265px;
+// }
+
+// .carousel__prevBtn {
+//   position: absolute;
+//   left: 40px;
+//   width: 40px;
+//   height: 40px;
+// }
+
+// .carousel__nextBtn {
+//   position: absolute;
+//   right: 40px;
+//   width: 40px;
+//   height: 40px;
+// }
+
+// .carousel__prev {
+//   left: -1rem;
+// }
+
+// .carousel__next {
+//   right: -1rem;
+// }

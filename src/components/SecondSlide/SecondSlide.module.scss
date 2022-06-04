@@ -1,0 +1,49 @@
+@import '../../variables.scss';
+
+.secondSlide {
+  height: 100%;
+  width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 50px;
+
+  &_form {
+    width: 400px;
+    margin-bottom: 50px;
+
+    label {
+      font-size: 2rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid $color-blue-secondary;
+    }
+
+    :focus {
+      outline: none;
+    }
+
+    :focus-within {
+      border-width: 2px;
+      box-shadow: 0 0.7rem 3rem rgb(82 82 82 / 8%);
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// &_input {
+//     width: 400px;
+//     height: 50px;
+//     border: 1px solid $color-blue-secondary;
+//   }
+
+//   ::placeholder {
+//     padding-left: 5px;
+//   }
