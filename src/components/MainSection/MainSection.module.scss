@@ -2,7 +2,8 @@
 
 .section {
   background-color: $color-background;
-  min-height: calc(100vh - 330px);
+  min-height: calc(100vh - 390px);
   width: 100%;
-  padding-top: 100px;
+  padding: 80px 0 80px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

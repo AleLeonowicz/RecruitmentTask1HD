@@ -27,7 +27,7 @@ const Footer = () => {
           rel="noreferrer"
         >
           <img
-            className={classes.footer_nav_github}
+            className={classes.footer_nav_linkedin}
             src={linkedinLogo}
             alt="LinkedIn link"
           />
