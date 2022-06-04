@@ -4,4 +4,23 @@
   height: 200px;
   width: 100%;
   background-color: $color-blue-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+  & p {
+    color: $color-white;
+    width: 100%;
+    text-align: center;
+  }
+
+  &_nav {
+    &_github {
+      width: 35px;
+      height: 35px;
+      margin-rigth: 10px;
+    }
+  }
 }

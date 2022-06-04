@@ -5,14 +5,14 @@ import companyLogo from '../../assets/svg/CompanyLogo.svg';
 
 const Header = () => {
   return (
-    <header className={classes.header}>
-      <div className={classes.header_container}>
+    <header id="header" className={classes.header}>
+      <section id="header-content" className={classes.header_container}>
         <img
           alt="Company Logo"
           className={classes.header_logo}
           src={companyLogo}
         />
-      </div>
+      </section>
     </header>
   );
 };
