@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './ThirdSlide.module.scss';
 
-import illustration from '../../assets/png/FormIcon.png';
-
 const ThirdSlide = () => {
   return (
     <section className={classes.thirdSlide}>

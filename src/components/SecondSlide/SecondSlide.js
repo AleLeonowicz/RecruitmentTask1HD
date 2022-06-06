@@ -1,8 +1,6 @@
 import React from 'react';
 import classes from './SecondSlide.module.scss';
 
-import illustration from '../../assets/png/FormIcon.png';
-
 const SecondSlide = () => {
   return (
     <section className={classes.secondSlide}>
@@ -40,12 +38,3 @@ const SecondSlide = () => {
 };
 
 export default SecondSlide;
-
-{
-  /* <input
-        className={classes.secondSlide_input}
-        type="text"
-        id="first_name"
-        placeholder="First Name"
-      ></input> */
-}
