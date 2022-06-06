@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import StateContext from '../../store/state-context';
 
 import classes from './CardContent.module.scss';
 import arrowForward from '../../assets/svg/chevron-forward-outline.svg';
@@ -11,7 +12,10 @@ import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
 
+//////////////////////////////////////////////////////////////////////////
+
 const CardContent = () => {
+  const stateCtx = useContext(StateContext);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 220 },
@@ -25,12 +29,21 @@ const CardContent = () => {
       carouselState: { currentSlide },
     } = rest;
 
+    const disableNextSlide =
+      (currentSlide === 1 &&
+        (stateCtx.firstName === '' ||
+          stateCtx.lastName === '' ||
+          stateCtx.gitUsername === '')) ||
+      stateCtx.firstNameError !== '' ||
+      stateCtx.lastNameError !== '' ||
+      stateCtx.gitUsernameError !== '';
+
     return (
       <div className={classes.carouselContainer_buttonGroup}>
         <button
           className={
             currentSlide === 0
-              ? classes.carouselContainer_buttonLeft_disabled
+              ? classes.carouselContainer_buttonLeft_hidden
               : classes.carouselContainer_buttonLeft
           }
           onClick={() => previous()}
@@ -38,12 +51,17 @@ const CardContent = () => {
           <img src={arrowBack} alt="Go to previous slide" />
         </button>
         <button
-          className={
-            currentSlide === 2
-              ? classes.carouselContainer_buttonRight_disabled
-              : classes.carouselContainer_buttonRight
+          className={`
+            ${
+              currentSlide === 2
+                ? classes.carouselContainer_buttonRight_hidden
+                : classes.carouselContainer_buttonRight
+            } ${
+            disableNextSlide && classes.carouselContainer_buttonRight_disabled
           }
+          `}
           onClick={() => next()}
+          disabled={disableNextSlide}
         >
           <img src={arrowForward} alt="Go to next slide" />
         </button>

@@ -1,17 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import classes from './SecondSlide.module.scss';
 import StateContext from '../../store/state-context';
 import { prohibitedSigns } from '../../constants';
-import { toHaveErrorMessage } from '@testing-library/jest-dom/dist/matchers';
 
 import githubUsernameRegex from 'github-username-regex';
 
 const SecondSlide = () => {
   const stateCtx = useContext(StateContext);
 
-  const [firstNameError, setFirstNameError] = useState('');
-  const [lastNameError, setLastNameError] = useState('');
-  const [gitUsernameError, setGitUsernameError] = useState('');
+  // const [stateCtx.firstNameError, stateCtx.setFirstNameError] = useState('');
+  // const [stateCtx.lastNameError, stateCtx.setLastNameError] = useState('');
+  // const [stateCtx.gitUsernameError, stateCtx.setGitUsernameError] = useState('');
 
   const setInputHandler = (event, setError, setState) => {
     setError('');
@@ -37,9 +36,9 @@ const SecondSlide = () => {
   };
 
   const setgitInputHandler = event => {
-    setGitUsernameError('');
+    stateCtx.setGitUsernameError('');
     if (!githubUsernameRegex.test(event.target.value)) {
-      setGitUsernameError('Invalid github username');
+      stateCtx.setGitUsernameError('Invalid github username');
     }
     stateCtx.setGitUsername(event.target.value);
   };
@@ -50,20 +49,25 @@ const SecondSlide = () => {
         <label htmlFor="fName">First Name:</label>
         <input
           className={`${classes.secondSlide_form_input} ${
-            firstNameError !== '' && classes.secondSlide_form_invalidInput
+            stateCtx.firstNameError !== '' &&
+            classes.secondSlide_form_invalidInput
           }`}
           type="text"
           id="fName"
           name="firstName"
           //   placeholder="Your name.."
           onChange={event =>
-            setInputHandler(event, setFirstNameError, stateCtx.setFirstName)
+            setInputHandler(
+              event,
+              stateCtx.setFirstNameError,
+              stateCtx.setFirstName
+            )
           }
           value={stateCtx.firstName}
         />
-        {firstNameError !== '' && (
+        {stateCtx.firstNameError !== '' && (
           <p className={classes.secondSlide_form_error}>
-            Invalid input! {firstNameError} Please try again.
+            Invalid input! {stateCtx.firstNameError} Please try again.
           </p>
         )}
       </form>
@@ -72,20 +76,25 @@ const SecondSlide = () => {
         <label htmlFor="lname">Last Name:</label>
         <input
           className={`${classes.secondSlide_form_input} ${
-            lastNameError !== '' && classes.secondSlide_form_invalidInput
+            stateCtx.lastNameError !== '' &&
+            classes.secondSlide_form_invalidInput
           }`}
           type="text"
           id="lName"
           name="lastName"
           //   placeholder="Your last name.."
           onChange={event =>
-            setInputHandler(event, setLastNameError, stateCtx.setLastName)
+            setInputHandler(
+              event,
+              stateCtx.setLastNameError,
+              stateCtx.setLastName
+            )
           }
           value={stateCtx.lastName}
         />
-        {lastNameError !== '' && (
+        {stateCtx.lastNameError !== '' && (
           <p className={classes.secondSlide_form_error}>
-            Invalid input! {lastNameError} Please try again.
+            Invalid input! {stateCtx.lastNameError} Please try again.
           </p>
         )}
       </form>
@@ -94,7 +103,8 @@ const SecondSlide = () => {
         <label htmlFor="gitUsername">Github username:</label>
         <input
           className={`${classes.secondSlide_form_input} ${
-            gitUsernameError !== '' && classes.secondSlide_form_invalidInput
+            stateCtx.gitUsernameError !== '' &&
+            classes.secondSlide_form_invalidInput
           }`}
           type="text"
           id="gitUsername"
@@ -103,9 +113,9 @@ const SecondSlide = () => {
           onChange={setgitInputHandler}
           value={stateCtx.gitUsername}
         />
-        {gitUsernameError !== '' && (
+        {stateCtx.gitUsernameError !== '' && (
           <p className={classes.secondSlide_form_error}>
-            Invalid input! {gitUsernameError} Please try again.
+            Invalid input! {stateCtx.gitUsernameError} Please try again.
           </p>
         )}
       </form>

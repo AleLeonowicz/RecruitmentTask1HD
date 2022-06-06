@@ -8,6 +8,9 @@ const StateProvider = props => {
   const [gitUsername, setGitUsername] = useState('');
   const [email, setemail] = useState('');
   const [isAgreed, setIsAgreed] = useState(false);
+  const [firstNameError, setFirstNameError] = useState('');
+  const [lastNameError, setLastNameError] = useState('');
+  const [gitUsernameError, setGitUsernameError] = useState('');
 
   const stateContext = {
     firstName: firstName,
@@ -19,6 +22,13 @@ const StateProvider = props => {
     email: email,
     setemail: setemail,
     isAgreed: isAgreed,
+    setIsAgreed: setIsAgreed,
+    firstNameError: firstNameError,
+    setFirstNameError: setFirstNameError,
+    lastNameError: lastNameError,
+    setLastNameError: setLastNameError,
+    gitUsernameError: gitUsernameError,
+    setGitUsernameError: setGitUsernameError,
   };
 
   return (

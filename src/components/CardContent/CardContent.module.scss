@@ -14,7 +14,7 @@
     cursor: pointer;
     position: relative;
     left: 40px;
-    top: -290px;
+    top: -298px;
     height: 50px;
     width: 30px;
 
@@ -22,7 +22,7 @@
       box-shadow: inset 0px 0px 0px 2px $color-grey;
     }
 
-    &_disabled {
+    &_hidden {
       opacity: 0;
       width: 30px;
     }
@@ -39,7 +39,7 @@
     cursor: pointer;
     position: relative;
     left: 800px;
-    top: -290px;
+    top: -298px;
     height: 50px;
     width: 30px;
 
@@ -47,9 +47,17 @@
       box-shadow: inset 0px 0px 0px 2px $color-grey;
     }
 
-    &_disabled {
+    &_hidden {
       opacity: 0;
       width: 30px;
+    }
+
+    &_disabled {
+      opacity: 0.2;
+
+      &:hover {
+        box-shadow: 0px 0px 0px 0px;
+      }
     }
 
     & img {
