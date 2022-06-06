@@ -9,6 +9,7 @@ import arrowBack from '../../assets/svg/chevron-back-outline.svg';
 
 import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
+import ThirdSlide from '../ThirdSlide/ThirdSlide';
 
 const CardContent = () => {
   const responsive = {
@@ -59,11 +60,12 @@ const CardContent = () => {
       arrows={false}
       renderButtonGroupOutside={true}
       customButtonGroup={<ButtonGroup />}
+      // swipeable={false}
+      draggable={false}
     >
       <FirstSlide />
       <SecondSlide />
-
-      <div className={classes.cardContent}>3</div>
+      <ThirdSlide />
     </Carousel>
   );
 };

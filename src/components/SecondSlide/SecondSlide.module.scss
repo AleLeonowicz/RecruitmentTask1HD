@@ -30,10 +30,10 @@
     }
 
     :focus-within {
-      border-width: 2px;
-      box-shadow: 0 0.7rem 3rem rgb(82 82 82 / 8%);
-      -webkit-transform: translateY(-2px);
-      transform: translateY(-2px);
+      box-shadow: inset 0px 0px 0px 1px $color-blue-secondary,
+        0 0.7rem 3rem rgb(82 82 82 / 8%);
+      // -webkit-transform: translateY(-2px);
+      // transform: translateY(-2px);
     }
   }
 }

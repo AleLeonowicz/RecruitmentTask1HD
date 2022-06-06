@@ -19,7 +19,7 @@
     width: 30px;
 
     &:hover {
-      background-color: $color-grey;
+      box-shadow: inset 0px 0px 0px 2px $color-grey;
     }
 
     &_disabled {
@@ -44,7 +44,7 @@
     width: 30px;
 
     &:hover {
-      background-color: $color-grey;
+      box-shadow: inset 0px 0px 0px 2px $color-grey;
     }
 
     &_disabled {

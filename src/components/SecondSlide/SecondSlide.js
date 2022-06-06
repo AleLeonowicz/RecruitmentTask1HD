@@ -7,7 +7,7 @@ const SecondSlide = () => {
   return (
     <section className={classes.secondSlide}>
       <form className={classes.secondSlide_form} action="">
-        <label for="fName">First Name</label>
+        <label for="fName">First Name:</label>
         <input
           type="text"
           id="fName"
@@ -17,7 +17,7 @@ const SecondSlide = () => {
       </form>
 
       <form className={classes.secondSlide_form} action="">
-        <label for="lname">Last Name</label>
+        <label for="lname">Last Name:</label>
         <input
           type="text"
           id="lName"
@@ -27,7 +27,7 @@ const SecondSlide = () => {
       </form>
 
       <form className={classes.secondSlide_form} action="">
-        <label for="gitUsername">Github username</label>
+        <label for="gitUsername">Github username:</label>
         <input
           type="text"
           id="gitUsername"
