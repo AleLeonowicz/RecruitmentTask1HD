@@ -4,6 +4,8 @@ import StateContext from '../../store/state-context';
 import { prohibitedSigns } from '../../constants';
 import { toHaveErrorMessage } from '@testing-library/jest-dom/dist/matchers';
 
+import githubUsernameRegex from 'github-username-regex';
+
 const SecondSlide = () => {
   const stateCtx = useContext(StateContext);
 
@@ -32,6 +34,14 @@ const SecondSlide = () => {
     }
 
     setState(event.target.value);
+  };
+
+  const setgitInputHandler = event => {
+    setGitUsernameError('');
+    if (!githubUsernameRegex.test(event.target.value)) {
+      setGitUsernameError('Invalid github username');
+    }
+    stateCtx.setGitUsername(event.target.value);
   };
 
   return (
@@ -71,6 +81,7 @@ const SecondSlide = () => {
           onChange={event =>
             setInputHandler(event, setLastNameError, stateCtx.setLastName)
           }
+          value={stateCtx.lastName}
         />
         {lastNameError !== '' && (
           <p className={classes.secondSlide_form_error}>
@@ -82,12 +93,21 @@ const SecondSlide = () => {
       <form className={classes.secondSlide_form} action="">
         <label htmlFor="gitUsername">Github username:</label>
         <input
-          className={classes.secondSlide_form_input}
+          className={`${classes.secondSlide_form_input} ${
+            gitUsernameError !== '' && classes.secondSlide_form_invalidInput
+          }`}
           type="text"
           id="gitUsername"
           name="githubUsername"
           //   placeholder="Your github username..."
+          onChange={setgitInputHandler}
+          value={stateCtx.gitUsername}
         />
+        {gitUsernameError !== '' && (
+          <p className={classes.secondSlide_form_error}>
+            Invalid input! {gitUsernameError} Please try again.
+          </p>
+        )}
       </form>
     </section>
   );
