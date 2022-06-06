@@ -6,11 +6,12 @@ const StateProvider = props => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [gitUsername, setGitUsername] = useState('');
-  const [email, setemail] = useState('');
+  const [email, setEmail] = useState('');
   const [isAgreed, setIsAgreed] = useState(false);
   const [firstNameError, setFirstNameError] = useState('');
   const [lastNameError, setLastNameError] = useState('');
   const [gitUsernameError, setGitUsernameError] = useState('');
+  const [emailError, setEmailError] = useState('');
 
   const stateContext = {
     firstName: firstName,
@@ -20,7 +21,7 @@ const StateProvider = props => {
     gitUsername: gitUsername,
     setGitUsername: setGitUsername,
     email: email,
-    setemail: setemail,
+    setEmail: setEmail,
     isAgreed: isAgreed,
     setIsAgreed: setIsAgreed,
     firstNameError: firstNameError,
@@ -29,6 +30,8 @@ const StateProvider = props => {
     setLastNameError: setLastNameError,
     gitUsernameError: gitUsernameError,
     setGitUsernameError: setGitUsernameError,
+    emailError: emailError,
+    setEmailError: setEmailError,
   };
 
   return (

@@ -14,7 +14,7 @@
     cursor: pointer;
     position: relative;
     left: 40px;
-    top: -298px;
+    top: -296px;
     height: 50px;
     width: 30px;
 
@@ -39,7 +39,7 @@
     cursor: pointer;
     position: relative;
     left: 800px;
-    top: -298px;
+    top: -296px;
     height: 50px;
     width: 30px;
 
@@ -54,6 +54,7 @@
 
     &_disabled {
       opacity: 0.2;
+      cursor: default;
 
       &:hover {
         box-shadow: 0px 0px 0px 0px;
