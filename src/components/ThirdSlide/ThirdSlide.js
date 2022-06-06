@@ -5,7 +5,7 @@ const ThirdSlide = () => {
   return (
     <section className={classes.thirdSlide}>
       <form className={classes.thirdSlide_form} action="">
-        <label for="email">E-mail:</label>
+        <label htmlFor="email">E-mail:</label>
         <input
           type="email"
           id="email"
@@ -14,7 +14,9 @@ const ThirdSlide = () => {
         />
         <div className={classes.thirdSlide_form_container}>
           <input type="checkbox" id="termsAndServices" value="" />
-          <label for="termsAndServices">I agree with terms and services</label>
+          <label htmlFor="termsAndServices">
+            I agree with terms and services
+          </label>
         </div>
         <input
           className={classes.thirdSlide_form_submitBtn}

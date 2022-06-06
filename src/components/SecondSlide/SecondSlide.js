@@ -11,43 +11,44 @@ const SecondSlide = () => {
   const [lastNameError, setLastNameError] = useState('');
   const [gitUsernameError, setGitUsernameError] = useState('');
 
-  const setFirstNameHandler = event => {
-    setFirstNameError('');
+  const setInputHandler = (event, setError, setState) => {
+    setError('');
 
     if (event.target.value.trim(' ') === '') {
-      setFirstNameError('Please type something in.');
+      setError('Type something in.');
     }
 
     if (event.target.value.includes('  ')) {
-      setFirstNameError('Double spaces are not allowed');
+      setError('Double spaces are not allowed');
     }
 
     if (prohibitedSigns.some(sign => event.target.value.includes(sign))) {
-      setFirstNameError('Special characters are not allowed');
+      setError('Special characters are not allowed');
     }
 
     if (event.target.value[0] === ' ') {
-      stateCtx.setFirstName(event.target.value.substring(1));
+      setState(event.target.value.substring(1));
       return;
     }
 
-    stateCtx.setFirstName(event.target.value);
+    setState(event.target.value);
   };
-
-  const invalidInputClass =
-    firstNameError !== '' && classes.secondSlide_form_invalidInput;
 
   return (
     <section className={classes.secondSlide}>
       <form className={classes.secondSlide_form} action="">
-        <label for="fName">First Name:</label>
+        <label htmlFor="fName">First Name:</label>
         <input
-          className={`${classes.secondSlide_form_input} ${invalidInputClass}`}
+          className={`${classes.secondSlide_form_input} ${
+            firstNameError !== '' && classes.secondSlide_form_invalidInput
+          }`}
           type="text"
           id="fName"
           name="firstName"
           //   placeholder="Your name.."
-          onChange={setFirstNameHandler}
+          onChange={event =>
+            setInputHandler(event, setFirstNameError, stateCtx.setFirstName)
+          }
           value={stateCtx.firstName}
         />
         {firstNameError !== '' && (
@@ -58,18 +59,28 @@ const SecondSlide = () => {
       </form>
 
       <form className={classes.secondSlide_form} action="">
-        <label for="lname">Last Name:</label>
+        <label htmlFor="lname">Last Name:</label>
         <input
-          className={classes.secondSlide_form_input}
+          className={`${classes.secondSlide_form_input} ${
+            lastNameError !== '' && classes.secondSlide_form_invalidInput
+          }`}
           type="text"
           id="lName"
           name="lastName"
           //   placeholder="Your last name.."
+          onChange={event =>
+            setInputHandler(event, setLastNameError, stateCtx.setLastName)
+          }
         />
+        {lastNameError !== '' && (
+          <p className={classes.secondSlide_form_error}>
+            Invalid input! {lastNameError} Please try again.
+          </p>
+        )}
       </form>
 
       <form className={classes.secondSlide_form} action="">
-        <label for="gitUsername">Github username:</label>
+        <label htmlFor="gitUsername">Github username:</label>
         <input
           className={classes.secondSlide_form_input}
           type="text"
