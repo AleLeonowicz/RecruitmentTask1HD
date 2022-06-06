@@ -17,7 +17,7 @@
       font-size: 2rem;
     }
 
-    input {
+    &_input {
       width: 100%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -32,6 +32,24 @@
         box-shadow: inset 0px 0px 0px 1px $color-blue-secondary,
           0 0.7rem 3rem rgb(82 82 82 / 8%);
       }
+    }
+
+    &_invalidInput {
+      border: 1px solid $color-orange-secondary;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-within {
+        box-shadow: inset 0px 0px 0px 1px $color-orange-secondary,
+          0 0.7rem 3rem rgb(82 82 82 / 8%);
+      }
+    }
+
+    &_error {
+      color: $color-orange-secondary;
+      font-size: 1.6rem;
     }
   }
 }
