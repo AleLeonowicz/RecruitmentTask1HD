@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import StateContext from '../../store/state-context';
@@ -17,7 +17,6 @@ import FourthSlide from '../FourthSlide/FourthSlide';
 
 const CardContent = () => {
   const stateCtx = useContext(StateContext);
-  const [, setCurrentSlide] = useState(undefined);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 220 },
@@ -31,14 +30,18 @@ const CardContent = () => {
       carouselState: { currentSlide },
     } = rest;
 
-    const disableNextSlide =
-      (currentSlide === 1 &&
-        (stateCtx.firstName === '' ||
-          stateCtx.lastName === '' ||
-          stateCtx.gitUsername === '')) ||
+    const anyFieldIsEmpty =
+      stateCtx.firstName === '' ||
+      stateCtx.lastName === '' ||
+      stateCtx.gitUsername === '';
+
+    const anyFieldHasError =
       stateCtx.firstNameError !== '' ||
       stateCtx.lastNameError !== '' ||
       stateCtx.gitUsernameError !== '';
+
+    const disableNextSlide =
+      currentSlide === 1 && (anyFieldHasError || anyFieldIsEmpty);
 
     return (
       <div className={classes.carouselContainer_buttonGroup}>
@@ -49,8 +52,6 @@ const CardContent = () => {
               : classes.carouselContainer_buttonLeft
           }
           onClick={() => {
-            console.log('currentSlide', currentSlide);
-            setCurrentSlide(currentSlide);
             previous();
           }}
         >
@@ -67,8 +68,6 @@ const CardContent = () => {
           }
           `}
           onClick={() => {
-            console.log('currentSlide', currentSlide);
-            setCurrentSlide(currentSlide);
             next();
           }}
           disabled={disableNextSlide}
