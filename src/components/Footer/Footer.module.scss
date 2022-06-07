@@ -32,3 +32,69 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .footer {
+    height: 80px;
+
+    & p {
+      font-size: 1.3rem;
+    }
+
+    &_nav {
+      &_github {
+        width: 30px;
+        height: 30px;
+      }
+
+      &_linkedin {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .footer {
+    height: 70px;
+
+    & p {
+      font-size: 1.3rem;
+    }
+
+    &_nav {
+      &_github {
+        width: 25px;
+        height: 25px;
+      }
+
+      &_linkedin {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .footer {
+    height: 60px;
+
+    & p {
+      font-size: 1rem;
+    }
+
+    &_nav {
+      &_github {
+        width: 20px;
+        height: 20px;
+      }
+
+      &_linkedin {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

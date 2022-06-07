@@ -13,3 +13,27 @@
     font-size: 3.5rem;
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .cardHeader {
+    & h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .cardHeader {
+    & h1 {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .cardHeader {
+    & h1 {
+      font-size: 1.9rem;
+    }
+  }
+}

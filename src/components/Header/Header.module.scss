@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .header {
   height: 100px;
   width: 100%;
@@ -5,7 +7,7 @@
   align-items: center;
 
   &_container {
-    width: 1400px;
+    width: 1300px;
     margin: auto;
   }
 
@@ -13,5 +15,37 @@
     display: flex;
     height: 70px;
     cursor: pointer;
+  }
+}
+
+@media screen and (min-width: $bp-large) and (max-width: $bp-xlarge) {
+  .header {
+    &_container {
+      width: 930px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .header {
+    &_container {
+      width: 555px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .header {
+    &_container {
+      width: 400px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .header {
+    &_container {
+      width: 300px;
+    }
   }
 }

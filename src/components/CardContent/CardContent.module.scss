@@ -68,9 +68,38 @@
   }
 }
 
-.cardContent {
-  width: 100%;
-  height: 530px;
-  padding: 40px;
-  background-color: $color-orange-primary;
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .carouselContainer {
+    &_buttonLeft {
+      left: 10px;
+    }
+
+    &_buttonRight {
+      left: 480px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .carouselContainer {
+    &_buttonLeft {
+      left: 5px;
+    }
+
+    &_buttonRight {
+      left: 335px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .carouselContainer {
+    &_buttonLeft {
+      left: 0px;
+    }
+
+    &_buttonRight {
+      left: 235px;
+    }
+  }
 }

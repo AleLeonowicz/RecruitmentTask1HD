@@ -18,7 +18,9 @@ const ThirdSlide = () => {
         onSubmit={event => stateCtx.fetchData(event, stateCtx.gitUsername)}
       >
         <div className={classes.thirdSlide_form_container1}>
-          <label htmlFor="email">E-mail:</label>
+          <label className={classes.thirdSlide_form_emailLabel} htmlFor="email">
+            E-mail:
+          </label>
           <input
             className={`${classes.thirdSlide_form_input} ${
               stateCtx.emailError !== '' && classes.thirdSlide_form_invalidInput
@@ -48,7 +50,10 @@ const ThirdSlide = () => {
               }
             }}
           />
-          <label htmlFor="termsAndServices">
+          <label
+            className={classes.thirdSlide_form_checkboxLabel}
+            htmlFor="termsAndServices"
+          >
             I agree with terms and services
           </label>
           {!isChecked && checkboxWasClicked && (

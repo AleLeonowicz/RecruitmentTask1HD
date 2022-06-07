@@ -5,15 +5,56 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 50px 0 50px;
 
   p {
     font-size: 2rem;
+    text-align: center;
   }
 
   img {
     margin-top: 80px;
     height: 190px;
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .firstSlide {
+    p {
+      width: 450px;
+    }
+
+    img {
+      margin-top: 50px;
+      height: 160px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .firstSlide {
+    p {
+      width: 350px;
+      font-size: 1.8rem;
+    }
+
+    img {
+      margin-top: 50px;
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .firstSlide {
+    p {
+      width: 250px;
+      font-size: 1.3rem;
+    }
+
+    img {
+      margin-top: 30px;
+      height: 110px;
+    }
   }
 }

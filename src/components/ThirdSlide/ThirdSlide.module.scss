@@ -17,7 +17,8 @@
       min-height: 104px;
     }
 
-    label {
+    &_emailLabel,
+    &_checkboxLabel {
       font-size: 2rem;
     }
 
@@ -66,11 +67,12 @@
       min-height: 47px;
 
       input {
-        margin-top: 8px;
+        margin: 8px 12px 0px 0px;
         width: 13px;
       }
 
-      label {
+      &_emailLabel,
+      &_checkboxLabel {
         margin-left: 10px;
       }
 
@@ -102,6 +104,87 @@
         &:hover {
           transform: none;
           cursor: default;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .thirdSlide {
+    width: 350px;
+
+    &_form {
+      width: 350px;
+
+      &_error {
+        font-size: 1.4rem;
+      }
+
+      &_container2 {
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .thirdSlide {
+    width: 300px;
+
+    &_form {
+      width: 300px;
+
+      &_emailLabel,
+      &_checkboxLabel {
+        font-size: 1.8rem;
+      }
+
+      &_error {
+        font-size: 1.2rem;
+      }
+
+      &_container2 {
+        input {
+          margin: 6px 12px 0px 0px;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .thirdSlide {
+    width: 230px;
+
+    &_form {
+      width: 230px;
+
+      &_emailLabel {
+        font-size: 1.6rem;
+      }
+
+      &_checkboxLabel {
+        font-size: 1.4rem;
+      }
+
+      &_error {
+        font-size: 1.2rem;
+      }
+
+      &_container2 {
+        input {
+          margin: 3px 8px 0px 0px;
+        }
+
+        p {
+          font-size: 1.2rem;
         }
       }
     }

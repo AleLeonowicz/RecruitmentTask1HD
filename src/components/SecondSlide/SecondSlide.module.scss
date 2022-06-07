@@ -55,3 +55,53 @@
     }
   }
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .secondSlide {
+    width: 350px;
+
+    &_form {
+      width: 350px;
+
+      &_error {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .secondSlide {
+    width: 300px;
+
+    &_form {
+      width: 300px;
+
+      label {
+        font-size: 1.8rem;
+      }
+
+      &_error {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .secondSlide {
+    width: 230px;
+
+    &_form {
+      width: 230px;
+
+      label {
+        font-size: 1.6rem;
+      }
+
+      &_error {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

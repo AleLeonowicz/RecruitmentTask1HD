@@ -7,3 +7,21 @@
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
 }
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .card {
+    width: 550px;
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .card {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .card {
+    width: 300px;
+  }
+}
