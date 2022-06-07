@@ -9,13 +9,13 @@
   align-items: center;
   justify-content: center;
 
-  &_form {
+  &_formContainer {
     width: 400px;
     min-height: 119px;
     margin-top: 8px;
     margin-bottom: 8px;
 
-    label {
+    & label {
       font-size: 2rem;
     }
 
@@ -60,7 +60,7 @@
   .secondSlide {
     width: 350px;
 
-    &_form {
+    &_formContainer {
       width: 350px;
 
       &_error {
@@ -74,7 +74,7 @@
   .secondSlide {
     width: 300px;
 
-    &_form {
+    &_formContainer {
       width: 300px;
       min-height: 103px;
       margin-top: 5px;
@@ -99,7 +99,7 @@
   .secondSlide {
     width: 230px;
 
-    &_form {
+    &_formContainer {
       width: 230px;
       min-height: 105px;
       margin-top: 6px;

@@ -49,6 +49,7 @@ const StateProvider = props => {
     setEmailError: setEmailError,
     fetchData: fetchData,
     fetchedData: fetchedData,
+    setFetchedData: setFetchedData,
   };
 
   return (

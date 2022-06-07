@@ -6,12 +6,10 @@ import StateContext from '../../store/state-context';
 import classes from './CardContent.module.scss';
 import arrowForward from '../../assets/svg/chevron-forward-outline.svg';
 import arrowBack from '../../assets/svg/chevron-back-outline.svg';
-// import circle from '../../assets/svg/ellipse-outline.svg';
 
 import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
-import FourthSlide from '../FourthSlide/FourthSlide';
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -60,7 +58,7 @@ const CardContent = () => {
         <button
           className={`
             ${
-              currentSlide === 3
+              currentSlide === 2
                 ? classes.carouselContainer_buttonRight_hidden
                 : classes.carouselContainer_buttonRight
             } ${
@@ -94,7 +92,6 @@ const CardContent = () => {
       <FirstSlide />
       <SecondSlide />
       <ThirdSlide />
-      <FourthSlide />
     </Carousel>
   );
 };

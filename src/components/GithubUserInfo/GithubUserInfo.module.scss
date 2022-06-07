@@ -1,0 +1,288 @@
+@import '../../variables.scss';
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 530px;
+  margin: auto;
+  width: 900px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  &_imgContainer {
+    width: 250px;
+
+    & img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
+  }
+
+  &_infoContainer {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+  }
+
+  &_headerContainer {
+    width: 100%;
+    & h1 {
+      font-size: 3.2rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  &_detailsContainer {
+    width: 50%;
+
+    & p {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    &_rightColumn {
+      padding-left: 10px;
+    }
+  }
+}
+
+.goBackToForm {
+  p {
+    width: 100%;
+    text-align: center;
+    color: $color-grey-dark;
+    font-size: 1.5rem;
+  }
+
+  & button {
+    font-size: 1.5rem;
+    color: $color-blue-primary;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.displayWhenSmallerThanLarge {
+  display: none;
+}
+
+@media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
+  .sectionWrapper {
+    height: 600px;
+    padding: 0px 20px;
+    width: 550px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    &_imgContainer {
+      display: flex;
+      width: 100%;
+
+      & img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &_headerContainer {
+      width: 100%;
+    }
+
+    &_infoContainer {
+      padding-top: 30px;
+      margin-left: 0px;
+    }
+
+    & h1 {
+      font-size: 2.8rem;
+    }
+
+    &_detailsContainer {
+      & h2 {
+        font-size: 1.5rem;
+      }
+
+      & p {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      &_rightColumn {
+        padding-left: 10px;
+      }
+    }
+  }
+
+  .goBackToForm {
+    p {
+      font-size: 1.3rem;
+      // margin: 20px 0;
+      & button {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .displayWhenBiggerThanMedium {
+    display: none;
+  }
+
+  .displayWhenSmallerThanLarge {
+    display: block;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+  .sectionWrapper {
+    height: 610px;
+    padding: 0px 10px;
+    width: 400px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    &_imgContainer {
+      display: flex;
+      width: 100%;
+
+      & img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &_headerContainer {
+      width: 100%;
+    }
+
+    &_infoContainer {
+      padding-top: 30px;
+      margin-left: 0px;
+    }
+
+    & h1 {
+      font-size: 2.4rem;
+    }
+
+    &_detailsContainer {
+      & h2 {
+        font-size: 1.3rem;
+      }
+
+      & p {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      &_rightColumn {
+        padding-left: 8px;
+      }
+    }
+  }
+
+  .goBackToForm {
+    p {
+      font-size: 1.15rem;
+      & button {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .displayWhenBiggerThanMedium {
+    display: none;
+  }
+
+  .displayWhenSmallerThanLarge {
+    display: block;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .sectionWrapper {
+    height: 1000px;
+    padding: 0px 10px;
+    width: 300px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    &_imgContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+
+      & img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    &_headerContainer {
+      width: 100%;
+    }
+
+    &_infoContainer {
+      padding-top: 30px;
+      margin-left: 0px;
+    }
+
+    & h1 {
+      font-size: 2.4rem;
+      margin: 10px 0 0;
+    }
+
+    &_detailsContainer {
+      width: 100%;
+      & h2 {
+        font-size: 1.5rem;
+        // text-align: center;
+      }
+
+      & p {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        // text-align: center;
+      }
+
+      &_rightColumn {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .goBackToForm {
+    p {
+      font-size: 1.15rem;
+      & button {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  .displayWhenBiggerThanMedium {
+    display: none;
+  }
+
+  .displayWhenSmallerThanLarge {
+    display: block;
+    margin-left: 30px;
+    margin-top: 50px;
+  }
+}

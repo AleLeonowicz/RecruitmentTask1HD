@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './MainSection.module.scss';
 import Card from '../Card/Card';
 
-import StateProvider from '../../store/StateProvider';
+import StateContext from '../../store/state-context';
+import GithubUserInfo from '../GithubUserInfo/GithubUserInfo';
 
 const MainSection = () => {
+  const { fetchedData } = useContext(StateContext);
+
+  console.log('fetchedData', fetchedData);
   return (
     <section className={classes.section}>
-      <StateProvider>
-        <Card />
-      </StateProvider>
+      {!fetchedData?.login && <Card />}
+      {fetchedData?.login && <GithubUserInfo />}
     </section>
   );
 };
