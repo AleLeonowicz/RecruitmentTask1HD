@@ -44,8 +44,13 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .header {
+    height: 60px;
     &_container {
       width: 300px;
+    }
+
+    &_logo {
+      height: 50px;
     }
   }
 }

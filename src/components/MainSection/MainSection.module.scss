@@ -6,3 +6,9 @@
   width: 100%;
   padding: 80px 0 80px;
 }
+
+@media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
+  .section {
+    padding: 20px 0 20px;
+  }
+}

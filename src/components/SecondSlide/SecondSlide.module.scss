@@ -94,9 +94,16 @@
 
     &_form {
       width: 230px;
+      min-height: 105px;
+      margin-top: 6px;
+      margin-bottom: 6px;
 
       label {
         font-size: 1.6rem;
+      }
+
+      &_input {
+        margin: 3px 0;
       }
 
       &_error {
