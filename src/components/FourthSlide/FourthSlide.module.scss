@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+.fourthSlide {
+  height: 100%;
+  width: 800px;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &_imgContainer {
+    width: 200px;
+
+    & img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+  }
+
+  &_infoContainer {
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 300px;
+  }
+
+  & h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &_detailsContainer {
+    width: 50%;
+
+    & p {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    &_rightColumn {
+      padding-left: 20px;
+    }
+  }
+}

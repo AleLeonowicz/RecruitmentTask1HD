@@ -11,14 +11,12 @@ const ThirdSlide = () => {
   const disableSubmit =
     !isChecked || stateCtx.email === '' || stateCtx.emailError !== '';
 
-  const checkFormInputHandler = event => {
-    event.preventDefault();
-    console.log('fetchData()');
-  };
-
   return (
     <section className={classes.thirdSlide}>
-      <form className={classes.thirdSlide_form} action="">
+      <form
+        className={classes.thirdSlide_form}
+        onSubmit={event => stateCtx.fetchData(event, stateCtx.gitUsername)}
+      >
         <div className={classes.thirdSlide_form_container1}>
           <label htmlFor="email">E-mail:</label>
           <input
@@ -64,7 +62,6 @@ const ThirdSlide = () => {
           type="submit"
           value="Submit"
           // onClick={!isChecked && () => setRenderTermsErr(true)}
-          onSubmit={checkFormInputHandler}
           disabled={disableSubmit}
         />
       </form>

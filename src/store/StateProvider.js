@@ -12,6 +12,21 @@ const StateProvider = props => {
   const [lastNameError, setLastNameError] = useState('');
   const [gitUsernameError, setGitUsernameError] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [fetchedData, setFetchedData] = useState({});
+
+  const fetchData = async (event, githubUsername) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(
+        `https://api.github.com/users/${githubUsername}`
+      );
+
+      const data = await response.json();
+
+      console.log('data', data);
+      setFetchedData(data);
+    } catch (err) {}
+  };
 
   const stateContext = {
     firstName: firstName,
@@ -32,6 +47,8 @@ const StateProvider = props => {
     setGitUsernameError: setGitUsernameError,
     emailError: emailError,
     setEmailError: setEmailError,
+    fetchData: fetchData,
+    fetchedData: fetchedData,
   };
 
   return (

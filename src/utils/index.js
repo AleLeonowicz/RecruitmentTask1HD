@@ -5,8 +5,6 @@ export const goToHomePage = () => {
   window.location.href = window.location.origin;
 };
 
-////////////////////////////////////////////////////////////////////////
-
 export const setInputHandler = (event, setError, setState) => {
   setError('');
   if (event.target.value.trim(' ') === '') {
@@ -43,9 +41,7 @@ export const setgitInputHandler = (event, setError, setState) => {
 
 export const validateEmail = (event, setError, setState) => {
   setError('');
-  if (
-    !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)
-  ) {
+  if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)) {
     setError('Please type in a correct e-mail address and try again.');
   }
   setState(event.target.value);

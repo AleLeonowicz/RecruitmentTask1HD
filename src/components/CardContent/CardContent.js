@@ -11,6 +11,7 @@ import arrowBack from '../../assets/svg/chevron-back-outline.svg';
 import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
+import FourthSlide from '../FourthSlide/FourthSlide';
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -53,7 +54,7 @@ const CardContent = () => {
         <button
           className={`
             ${
-              currentSlide === 2
+              currentSlide === 3
                 ? classes.carouselContainer_buttonRight_hidden
                 : classes.carouselContainer_buttonRight
             } ${
@@ -85,6 +86,7 @@ const CardContent = () => {
       <FirstSlide />
       <SecondSlide />
       <ThirdSlide />
+      <FourthSlide />
     </Carousel>
   );
 };
