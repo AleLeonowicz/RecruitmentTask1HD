@@ -70,12 +70,21 @@
 
 @media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
   .carouselContainer {
+    height: 530px;
     &_buttonLeft {
       left: 10px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
 
     &_buttonRight {
       left: 480px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }
@@ -86,11 +95,19 @@
     &_buttonLeft {
       left: 5px;
       top: -255px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
 
     &_buttonRight {
       left: 335px;
       top: -255px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }

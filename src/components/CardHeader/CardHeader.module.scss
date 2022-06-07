@@ -16,6 +16,7 @@
 
 @media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
   .cardHeader {
+    height: 70px;
     & h1 {
       font-size: 3rem;
     }
