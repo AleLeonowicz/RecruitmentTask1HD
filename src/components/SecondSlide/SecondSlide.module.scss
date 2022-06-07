@@ -76,9 +76,16 @@
 
     &_form {
       width: 300px;
+      min-height: 103px;
+      margin-top: 5px;
+      margin-bottom: 5px;
 
       label {
         font-size: 1.8rem;
+      }
+
+      &_input {
+        margin: 3px 0;
       }
 
       &_error {

@@ -82,14 +82,15 @@
 
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .carouselContainer {
+    height: 450px;
     &_buttonLeft {
       left: 5px;
-      top: -200px;
+      top: -255px;
     }
 
     &_buttonRight {
       left: 335px;
-      top: -200px;
+      top: -255px;
     }
   }
 }
@@ -98,13 +99,21 @@
   .carouselContainer {
     height: 400px;
     &_buttonLeft {
-      left: -3px;
+      left: 0px;
       top: -230px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
 
     &_buttonRight {
-      left: 243px;
+      left: 240px;
       top: -230px;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }
