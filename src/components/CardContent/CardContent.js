@@ -79,7 +79,7 @@ const CardContent = () => {
       arrows={false}
       renderButtonGroupOutside={true}
       customButtonGroup={<ButtonGroup />}
-      // swipeable={false}
+      swipeable={false}
       draggable={false}
       keyBoardControl={false}
     >
