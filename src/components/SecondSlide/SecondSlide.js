@@ -9,7 +9,7 @@ const SecondSlide = () => {
 
   return (
     <section className={classes.secondSlide}>
-      <form className={classes.secondSlide_form} action="">
+      <form className={classes.secondSlide_form}>
         <label htmlFor="firstName">First Name:</label>
         <input
           className={`${classes.secondSlide_form_input} ${
@@ -35,7 +35,7 @@ const SecondSlide = () => {
         )}
       </form>
 
-      <form className={classes.secondSlide_form} action="">
+      <form className={classes.secondSlide_form}>
         <label htmlFor="lastname">Last Name:</label>
         <input
           className={`${classes.secondSlide_form_input} ${
@@ -61,7 +61,7 @@ const SecondSlide = () => {
         )}
       </form>
 
-      <form className={classes.secondSlide_form} action="">
+      <form className={classes.secondSlide_form}>
         <label htmlFor="gitUsername">Github username:</label>
         <input
           className={`${classes.secondSlide_form_input} ${

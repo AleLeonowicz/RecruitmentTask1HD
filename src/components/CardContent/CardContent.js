@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import StateContext from '../../store/state-context';
@@ -17,6 +17,7 @@ import FourthSlide from '../FourthSlide/FourthSlide';
 
 const CardContent = () => {
   const stateCtx = useContext(StateContext);
+  const [, setCurrentSlide] = useState(undefined);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 220 },
@@ -47,7 +48,11 @@ const CardContent = () => {
               ? classes.carouselContainer_buttonLeft_hidden
               : classes.carouselContainer_buttonLeft
           }
-          onClick={() => previous()}
+          onClick={() => {
+            console.log('currentSlide', currentSlide);
+            setCurrentSlide(currentSlide);
+            previous();
+          }}
         >
           <img src={arrowBack} alt="Go to previous slide" />
         </button>
@@ -61,7 +66,11 @@ const CardContent = () => {
             disableNextSlide && classes.carouselContainer_buttonRight_disabled
           }
           `}
-          onClick={() => next()}
+          onClick={() => {
+            console.log('currentSlide', currentSlide);
+            setCurrentSlide(currentSlide);
+            next();
+          }}
           disabled={disableNextSlide}
         >
           <img src={arrowForward} alt="Go to next slide" />
