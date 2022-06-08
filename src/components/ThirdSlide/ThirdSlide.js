@@ -4,18 +4,25 @@ import StateContext from '../../store/state-context';
 import { validateEmail } from '../../utils';
 
 const ThirdSlide = () => {
-  const stateCtx = useContext(StateContext);
+  const {
+    email,
+    setEmail,
+    emailError,
+    setEmailError,
+    fetchData,
+    fetchedData,
+    gitUsername,
+  } = useContext(StateContext);
   const [isChecked, setIsChecked] = useState(false);
   const [checkboxWasClicked, setCheckboxWasClicked] = useState(false);
 
-  const disableSubmit =
-    !isChecked || stateCtx.email === '' || stateCtx.emailError !== '';
+  const disableSubmit = !isChecked || email === '' || emailError !== '';
 
   return (
     <section className={classes.thirdSlide}>
       <form
         className={classes.thirdSlide_form}
-        onSubmit={event => stateCtx.fetchData(event, stateCtx.gitUsername)}
+        onSubmit={event => fetchData(event, gitUsername)}
       >
         <div className={classes.thirdSlide_form_container1}>
           <label className={classes.thirdSlide_form_emailLabel} htmlFor="email">
@@ -23,20 +30,16 @@ const ThirdSlide = () => {
           </label>
           <input
             className={`${classes.thirdSlide_form_input} ${
-              stateCtx.emailError !== '' && classes.thirdSlide_form_invalidInput
+              emailError !== '' && classes.thirdSlide_form_invalidInput
             }`}
             type="email"
             id="email"
             name="email"
-            onChange={event =>
-              validateEmail(event, stateCtx.setEmailError, stateCtx.setEmail)
-            }
-            value={stateCtx.email}
+            onChange={event => validateEmail(event, setEmailError, setEmail)}
+            value={email}
           />
-          {stateCtx.emailError !== '' && (
-            <p className={classes.thirdSlide_form_error}>
-              {stateCtx.emailError}
-            </p>
+          {emailError !== '' && (
+            <p className={classes.thirdSlide_form_error}>{emailError}</p>
           )}
         </div>
         <div className={classes.thirdSlide_form_container2}>
@@ -70,7 +73,7 @@ const ThirdSlide = () => {
             // onClick={!isChecked && () => setRenderTermsErr(true)}
             disabled={disableSubmit}
           />
-          {stateCtx.fetchedData.message && (
+          {fetchedData.message && (
             <p className={classes.thirdSlide_form_error}>
               No Github account matching your query found. Please go back and
               try again.

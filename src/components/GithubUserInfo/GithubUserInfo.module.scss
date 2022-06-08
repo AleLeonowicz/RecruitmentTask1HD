@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 650px;
+  min-height: 650px;
   margin: auto;
   width: 900px;
 }
@@ -82,7 +82,7 @@
 
 @media screen and (min-width: $bp-medium) and (max-width: $bp-large) {
   .sectionWrapper {
-    height: 600px;
+    min-height: 600px;
     padding: 0px 20px;
     width: 550px;
   }
@@ -124,6 +124,7 @@
 
       &_rightColumn {
         padding-left: 10px;
+        padding-bottom: 20px;
       }
     }
   }
@@ -151,7 +152,7 @@
 
 @media screen and (min-width: $bp-small) and (max-width: $bp-medium) {
   .sectionWrapper {
-    height: 590px;
+    min-height: 590px;
     padding: 0px 10px;
     width: 400px;
   }
@@ -193,6 +194,7 @@
 
       &_rightColumn {
         padding-left: 8px;
+        padding-bottom: 20px;
       }
     }
   }
@@ -219,7 +221,7 @@
 
 @media screen and (min-width: $bp-xsmall) and (max-width: $bp-small) {
   .sectionWrapper {
-    height: 1000px;
+    min-height: 1000px;
     padding: 0px 10px;
     width: 300px;
   }
@@ -268,6 +270,7 @@
       &_rightColumn {
         width: 100%;
         padding-left: 0;
+        padding-bottom: 20px;
       }
     }
   }

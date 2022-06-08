@@ -5,8 +5,6 @@ import StateContext from '../../store/state-context';
 const GithubUserInfo = () => {
   const {
     fetchedData,
-    firstName,
-    lastName,
     setFirstName,
     setLastName,
     setGitUsername,
@@ -28,7 +26,7 @@ const GithubUserInfo = () => {
         <div className={classes.container_imgContainer}>
           <img alt="github avatar" src={fetchedData.avatar_url}></img>
           <h1 className={classes.displayWhenSmallerThanLarge}>
-            {firstName} {lastName}
+            {fetchedData.name}
           </h1>
         </div>
         <div className={classes.container_infoContainer}>
@@ -36,7 +34,7 @@ const GithubUserInfo = () => {
             <h1 className={classes.displayWhenBiggerThanMedium}>
               {fetchedData.name}
             </h1>
-          </div>{' '}
+          </div>
           <div className={classes.container_detailsContainer}>
             <h2>Github Username:</h2>
             <p>{fetchedData.login}</p>
@@ -64,7 +62,11 @@ const GithubUserInfo = () => {
             <h2>Twitter Username:</h2>
             <p>{fetchedData.twitter_username || 'No information provided'}</p>
             <h2>Hireable:</h2>
-            <p>{fetchedData.hireable || 'No information provided'}</p>
+            <p>
+              {(fetchedData.hireable === true && 'Yes') ||
+                (fetchedData.hireable === false && 'No') ||
+                'No information provided'}
+            </p>
             <h2>Location:</h2>
             <p>{fetchedData.location || 'No information provided'}</p>
             <h2>Blog:</h2>
@@ -84,7 +86,7 @@ const GithubUserInfo = () => {
       </div>
       <div className={classes.goBackToForm}>
         <p className={classes.goBackToForm}>
-          Not the account you were looking for? Klick{' '}
+          {'Not the account you were looking for? Klick '}
           <button onClick={resetStateHandler}>here</button> to fill the form
           again.
         </p>
