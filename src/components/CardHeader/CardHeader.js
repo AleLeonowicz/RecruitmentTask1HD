@@ -6,7 +6,7 @@ const CardHeader = () => {
   const { firstName, fetchedData } = useContext(StateContext);
   return (
     <div className={classes.cardHeader}>
-      {!fetchedData.login && <h1>Welcome to CompanyName!</h1>}
+      {!fetchedData.login && <h1>Welcome to GitHub Lookup!</h1>}
       {fetchedData.login && <h1>Hi {firstName}! It's good to see you!</h1>}
     </div>
   );
