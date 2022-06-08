@@ -26,13 +26,13 @@ const GithubUserInfo = () => {
         <div className={classes.container_imgContainer}>
           <img alt="github avatar" src={fetchedData.avatar_url}></img>
           <h1 className={classes.displayWhenSmallerThanLarge}>
-            {fetchedData.name}
+            {fetchedData.name || 'No information provided'}
           </h1>
         </div>
         <div className={classes.container_infoContainer}>
           <div className={classes.container_headerContainer}>
             <h1 className={classes.displayWhenBiggerThanMedium}>
-              {fetchedData.name}
+              {fetchedData.name || 'No information provided'}
             </h1>
           </div>
           <div className={classes.container_detailsContainer}>
@@ -71,9 +71,12 @@ const GithubUserInfo = () => {
             <p>{fetchedData.location || 'No information provided'}</p>
             <h2>Blog:</h2>
             <p>
-              <a href={fetchedData.blog} target="_blank" rel="noreferrer">
-                {fetchedData.blog}
-              </a>
+              {(fetchedData.blog && (
+                <a href={fetchedData.blog} target="_blank" rel="noreferrer">
+                  {fetchedData.blog}
+                </a>
+              )) ||
+                'No information provided'}
             </p>
             <h2>Company:</h2>
             <p>{fetchedData.company || 'No information provided'}</p>
