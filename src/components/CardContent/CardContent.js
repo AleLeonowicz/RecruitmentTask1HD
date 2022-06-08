@@ -1,20 +1,26 @@
 import React, { useContext } from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import StateContext from '../../store/state-context';
-
 import classes from './CardContent.module.scss';
 import arrowForward from '../../assets/svg/chevron-forward-outline.svg';
 import arrowBack from '../../assets/svg/chevron-back-outline.svg';
-
 import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
 
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 //////////////////////////////////////////////////////////////////////////
 
 const CardContent = () => {
-  const stateCtx = useContext(StateContext);
+  const {
+    firstName,
+    lastName,
+    gitUsername,
+    firstNameError,
+    lastNameError,
+    gitUsernameError,
+  } = useContext(StateContext);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 220 },
@@ -29,14 +35,10 @@ const CardContent = () => {
     } = rest;
 
     const anyFieldIsEmpty =
-      stateCtx.firstName === '' ||
-      stateCtx.lastName === '' ||
-      stateCtx.gitUsername === '';
+      firstName === '' || lastName === '' || gitUsername === '';
 
     const anyFieldHasError =
-      stateCtx.firstNameError !== '' ||
-      stateCtx.lastNameError !== '' ||
-      stateCtx.gitUsernameError !== '';
+      firstNameError !== '' || lastNameError !== '' || gitUsernameError !== '';
 
     const disableNextSlide =
       currentSlide === 1 && (anyFieldHasError || anyFieldIsEmpty);

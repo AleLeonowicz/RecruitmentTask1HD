@@ -13,6 +13,7 @@ const ThirdSlide = () => {
     fetchedData,
     gitUsername,
   } = useContext(StateContext);
+
   const [isChecked, setIsChecked] = useState(false);
   const [checkboxWasClicked, setCheckboxWasClicked] = useState(false);
 

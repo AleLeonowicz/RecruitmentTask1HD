@@ -1,11 +1,23 @@
 import React, { useContext } from 'react';
 import classes from './SecondSlide.module.scss';
 import StateContext from '../../store/state-context';
-
 import { setInputHandler, setgitInputHandler } from '../../utils';
 
 const SecondSlide = () => {
-  const stateCtx = useContext(StateContext);
+  const {
+    firstName,
+    setFirstName,
+    firstNameError,
+    setFirstNameError,
+    lastName,
+    setLastName,
+    lastNameError,
+    setLastNameError,
+    gitUsername,
+    setGitUsername,
+    gitUsernameError,
+    setGitUsernameError,
+  } = useContext(StateContext);
 
   return (
     <section className={classes.secondSlide}>
@@ -14,24 +26,19 @@ const SecondSlide = () => {
           <label htmlFor="firstName">First Name:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              stateCtx.firstNameError !== '' &&
-              classes.secondSlide_form_invalidInput
+              firstNameError !== '' && classes.secondSlide_form_invalidInput
             }`}
             type="text"
             id="firstName"
             name="firstName"
             onChange={event =>
-              setInputHandler(
-                event,
-                stateCtx.setFirstNameError,
-                stateCtx.setFirstName
-              )
+              setInputHandler(event, setFirstNameError, setFirstName)
             }
-            value={stateCtx.firstName}
+            value={firstName}
           />
-          {stateCtx.firstNameError !== '' && (
+          {firstNameError !== '' && (
             <p className={classes.secondSlide_formContainer_error}>
-              {stateCtx.firstNameError} Please try again.
+              {firstNameError} Please try again.
             </p>
           )}
         </div>
@@ -40,24 +47,19 @@ const SecondSlide = () => {
           <label htmlFor="lastname">Last Name:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              stateCtx.lastNameError !== '' &&
-              classes.secondSlide_form_invalidInput
+              lastNameError !== '' && classes.secondSlide_form_invalidInput
             }`}
             type="text"
             id="lastName"
             name="lastName"
             onChange={event =>
-              setInputHandler(
-                event,
-                stateCtx.setLastNameError,
-                stateCtx.setLastName
-              )
+              setInputHandler(event, setLastNameError, setLastName)
             }
-            value={stateCtx.lastName}
+            value={lastName}
           />
-          {stateCtx.lastNameError !== '' && (
+          {lastNameError !== '' && (
             <p className={classes.secondSlide_formContainer_error}>
-              {stateCtx.lastNameError} Please try again.
+              {lastNameError} Please try again.
             </p>
           )}
         </div>
@@ -66,24 +68,19 @@ const SecondSlide = () => {
           <label htmlFor="gitUsername">Github username:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              stateCtx.gitUsernameError !== '' &&
-              classes.secondSlide_form_invalidInput
+              gitUsernameError !== '' && classes.secondSlide_form_invalidInput
             }`}
             type="text"
             id="gitUsername"
             name="githubUsername"
             onChange={event =>
-              setgitInputHandler(
-                event,
-                stateCtx.setGitUsernameError,
-                stateCtx.setGitUsername
-              )
+              setgitInputHandler(event, setGitUsernameError, setGitUsername)
             }
-            value={stateCtx.gitUsername}
+            value={gitUsername}
           />
-          {stateCtx.gitUsernameError !== '' && (
+          {gitUsernameError !== '' && (
             <p className={classes.secondSlide_formContainer_error}>
-              {stateCtx.gitUsernameError} Please try again.
+              {gitUsernameError} Please try again.
             </p>
           )}
         </div>
