@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Header.module.scss';
 import { goToHomePage } from '../../utils/index';
 
-import companyLogo from '../../assets/svg/GitHubLookupLogo.svg';
+import companyLogo from '../../assets/svg/GitHubLookup.svg';
 
 const Header = () => {
   return (

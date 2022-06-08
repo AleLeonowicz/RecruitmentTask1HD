@@ -36,11 +36,11 @@ const GithubUserInfo = () => {
             </h1>
           </div>
           <div className={classes.container_detailsContainer}>
-            <h2>Github Username:</h2>
+            <h2>GitHub username:</h2>
             <p>{fetchedData.login}</p>
             <h2>E-mail address:</h2>
             <p>{fetchedData.email || 'No information provided'}</p>
-            <h2>Github Profile:</h2>
+            <h2>GitHub profile:</h2>
             <p>
               <a href={fetchedData.html_url} target="_blank" rel="noreferrer">
                 {fetchedData.html_url}
@@ -51,15 +51,15 @@ const GithubUserInfo = () => {
             <h2>Following:</h2>
             <p>{fetchedData.following}</p>
 
-            <h2>Public Repositories:</h2>
+            <h2>Public repositories:</h2>
             <p>{fetchedData.public_repos}</p>
-            <h2>Public Gists:</h2>
+            <h2>Public gists:</h2>
             <p>{fetchedData.public_gists}</p>
           </div>
           <div
             className={`${classes.container_detailsContainer} ${classes.container_detailsContainer_rightColumn}`}
           >
-            <h2>Twitter Username:</h2>
+            <h2>Twitter username:</h2>
             <p>{fetchedData.twitter_username || 'No information provided'}</p>
             <h2>Hireable:</h2>
             <p>
@@ -80,7 +80,7 @@ const GithubUserInfo = () => {
             </p>
             <h2>Company:</h2>
             <p>{fetchedData.company || 'No information provided'}</p>
-            <h2>Account Type:</h2>
+            <h2>Account type:</h2>
             <p>{fetchedData.type || 'No information provided'}</p>
             <h2>Bio:</h2>
             <p>{fetchedData.bio || 'No information provided'}</p>
