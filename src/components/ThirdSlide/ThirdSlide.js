@@ -60,15 +60,23 @@ const ThirdSlide = () => {
             <p>Please agree to terms and services before submiting.</p>
           )}
         </div>
-        <input
-          className={`${classes.thirdSlide_form_submitBtn} ${
-            disableSubmit && classes.thirdSlide_form_submitBtn_disabled
-          }`}
-          type="submit"
-          value="Submit"
-          // onClick={!isChecked && () => setRenderTermsErr(true)}
-          disabled={disableSubmit}
-        />
+        <div className={classes.thirdSlide_form_container3}>
+          <input
+            className={`${classes.thirdSlide_form_submitBtn} ${
+              disableSubmit && classes.thirdSlide_form_submitBtn_disabled
+            }`}
+            type="submit"
+            value="Submit"
+            // onClick={!isChecked && () => setRenderTermsErr(true)}
+            disabled={disableSubmit}
+          />
+          {stateCtx.fetchedData.message && (
+            <p className={classes.thirdSlide_form_error}>
+              No Github account matching your query found. Please go back and
+              try again.
+            </p>
+          )}
+        </div>
       </form>
     </section>
   );

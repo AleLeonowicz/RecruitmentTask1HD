@@ -11,7 +11,6 @@
 
   &_form {
     width: 400px;
-    // margin-bottom: 50px;
 
     &_container1 {
       min-height: 104px;
@@ -81,6 +80,10 @@
         color: $color-orange-secondary;
         font-size: 1.5rem;
       }
+    }
+
+    &_container3 {
+      min-height: 106px;
     }
 
     .thirdSlide_form_submitBtn {

@@ -7,7 +7,6 @@ const GithubUserInfo = () => {
     fetchedData,
     firstName,
     lastName,
-    gitUsername,
     setFirstName,
     setLastName,
     setGitUsername,
@@ -35,16 +34,20 @@ const GithubUserInfo = () => {
         <div className={classes.container_infoContainer}>
           <div className={classes.container_headerContainer}>
             <h1 className={classes.displayWhenBiggerThanMedium}>
-              {firstName} {lastName}
+              {fetchedData.name}
             </h1>
           </div>{' '}
           <div className={classes.container_detailsContainer}>
             <h2>Github Username:</h2>
-            <p>{gitUsername}</p>
+            <p>{fetchedData.login}</p>
             <h2>E-mail address:</h2>
             <p>{fetchedData.email || 'No information provided'}</p>
             <h2>Github Profile:</h2>
-            <p>{fetchedData.html_url}</p>
+            <p>
+              <a href={fetchedData.html_url} target="_blank" rel="noreferrer">
+                {fetchedData.html_url}
+              </a>
+            </p>
             <h2>Followers:</h2>
             <p>{fetchedData.followers}</p>
             <h2>Following:</h2>
@@ -60,18 +63,22 @@ const GithubUserInfo = () => {
           >
             <h2>Twitter Username:</h2>
             <p>{fetchedData.twitter_username || 'No information provided'}</p>
-            <h2>Bio:</h2>
-            <p>{fetchedData.bio || 'No information provided'}</p>
             <h2>Hireable:</h2>
-            <p>{fetchedData.bio || 'No information provided'}</p>
+            <p>{fetchedData.hireable || 'No information provided'}</p>
             <h2>Location:</h2>
             <p>{fetchedData.location || 'No information provided'}</p>
             <h2>Blog:</h2>
-            <p>{fetchedData.blog || 'No information provided'}</p>
+            <p>
+              <a href={fetchedData.blog} target="_blank" rel="noreferrer">
+                {fetchedData.blog}
+              </a>
+            </p>
             <h2>Company:</h2>
             <p>{fetchedData.company || 'No information provided'}</p>
             <h2>Account Type:</h2>
             <p>{fetchedData.type || 'No information provided'}</p>
+            <h2>Bio:</h2>
+            <p>{fetchedData.bio || 'No information provided'}</p>
           </div>
         </div>
       </div>
