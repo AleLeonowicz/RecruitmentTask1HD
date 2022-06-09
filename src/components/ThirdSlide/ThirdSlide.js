@@ -13,6 +13,7 @@ const ThirdSlide = () => {
     fetchData,
     fetchedData,
     gitUsername,
+    isFetchingErr,
   } = useContext(StateContext);
 
   const [isChecked, setIsChecked] = useState(false);
@@ -70,7 +71,7 @@ const ThirdSlide = () => {
           </label>
           {!isChecked && checkboxWasClicked && (
             <p data-testid="checkboxErrorParagraph">
-              Please agree to terms and services before submiting.
+              Please agree to terms and services before submitting.
             </p>
           )}
         </div>
@@ -84,10 +85,15 @@ const ThirdSlide = () => {
             value="Submit"
             disabled={disableSubmit}
           />
-          {fetchedData.message && (
+          {fetchedData.message === 'Not Found' && (
             <p className={classes.thirdSlide_form_error}>
-              No Github account matching your query found. Please go back and
-              try again.
+              No Github account matching your query was found. Please go back
+              and try again.
+            </p>
+          )}
+          {isFetchingErr && (
+            <p className={classes.thirdSlide_form_error}>
+              Something went wrong. Please try again.
             </p>
           )}
         </div>

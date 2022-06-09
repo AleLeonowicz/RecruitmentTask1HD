@@ -42,7 +42,7 @@ export const setgitInputHandler = (event, setError, setState) => {
 export const validateEmail = (event, setError, setState) => {
   setError('');
   if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(event.target.value)) {
-    setError('Please type in a correct e-mail address and try again.');
+    setError('Please type in the correct e-mail address and try again.');
   }
   setState(event.target.value);
 };

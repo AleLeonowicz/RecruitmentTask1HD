@@ -10,6 +10,10 @@ import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
 
+/**
+ * During testing the device type is not defined and it must be provided explicitly,
+ * as without it react-multi-carousel does not render it's list elements
+ */
 const additionalProps =
   process.env.NODE_ENV === 'test'
     ? {
