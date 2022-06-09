@@ -32,7 +32,7 @@ export const setInputHandler = (event, setError, setState) => {
 export const setgitInputHandler = (event, setError, setState) => {
   setError('');
   if (!githubUsernameRegex.test(event.target.value)) {
-    setError('Invalid Github username.');
+    setError('Invalid GitHub username.');
   }
   setState(event.target.value);
 };
