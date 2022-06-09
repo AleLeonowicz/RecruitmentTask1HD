@@ -1,4 +1,5 @@
 import React from 'react';
+
 import classes from './Card.module.scss';
 import CardHeader from '../CardHeader/CardHeader';
 import CardContent from '../CardContent/CardContent';

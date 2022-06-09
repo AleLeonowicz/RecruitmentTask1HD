@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+
 import classes from './ThirdSlide.module.scss';
 import StateContext from '../../store/state-context';
 import { validateEmail } from '../../utils';
@@ -71,7 +72,6 @@ const ThirdSlide = () => {
             }`}
             type="submit"
             value="Submit"
-            // onClick={!isChecked && () => setRenderTermsErr(true)}
             disabled={disableSubmit}
           />
           {fetchedData.message && (

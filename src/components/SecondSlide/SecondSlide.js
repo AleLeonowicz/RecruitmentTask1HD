@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+
 import classes from './SecondSlide.module.scss';
 import StateContext from '../../store/state-context';
 import { setInputHandler, setgitInputHandler } from '../../utils';
@@ -26,8 +27,10 @@ const SecondSlide = () => {
           <label htmlFor="firstName">First Name:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              firstNameError !== '' && classes.secondSlide_form_invalidInput
+              firstNameError !== '' &&
+              classes.secondSlide_formContainer_invalidInput
             }`}
+            data-testid="firstNameInput"
             type="text"
             id="firstName"
             name="firstName"
@@ -37,7 +40,10 @@ const SecondSlide = () => {
             value={firstName}
           />
           {firstNameError !== '' && (
-            <p className={classes.secondSlide_formContainer_error}>
+            <p
+              className={classes.secondSlide_formContainer_error}
+              data-testid="firstNameErrorParagraph"
+            >
               {firstNameError} Please try again.
             </p>
           )}
@@ -47,8 +53,10 @@ const SecondSlide = () => {
           <label htmlFor="lastname">Last Name:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              lastNameError !== '' && classes.secondSlide_form_invalidInput
+              lastNameError !== '' &&
+              classes.secondSlide_formContainer_invalidInput
             }`}
+            data-testid="lastNameInput"
             type="text"
             id="lastName"
             name="lastName"
@@ -58,7 +66,10 @@ const SecondSlide = () => {
             value={lastName}
           />
           {lastNameError !== '' && (
-            <p className={classes.secondSlide_formContainer_error}>
+            <p
+              className={classes.secondSlide_formContainer_error}
+              data-testid="lastNameErrorParagraph"
+            >
               {lastNameError} Please try again.
             </p>
           )}
@@ -68,8 +79,10 @@ const SecondSlide = () => {
           <label htmlFor="gitUsername">Github username:</label>
           <input
             className={`${classes.secondSlide_formContainer_input} ${
-              gitUsernameError !== '' && classes.secondSlide_form_invalidInput
+              gitUsernameError !== '' &&
+              classes.secondSlide_formContainer_invalidInput
             }`}
+            data-testid="githubInput"
             type="text"
             id="gitUsername"
             name="githubUsername"
@@ -79,7 +92,10 @@ const SecondSlide = () => {
             value={gitUsername}
           />
           {gitUsernameError !== '' && (
-            <p className={classes.secondSlide_formContainer_error}>
+            <p
+              className={classes.secondSlide_formContainer_error}
+              data-testid="githubErrorParagraph"
+            >
               {gitUsernameError} Please try again.
             </p>
           )}

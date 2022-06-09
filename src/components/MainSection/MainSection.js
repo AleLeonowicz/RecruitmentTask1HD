@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+
 import classes from './MainSection.module.scss';
 import Card from '../Card/Card';
 import StateContext from '../../store/state-context';

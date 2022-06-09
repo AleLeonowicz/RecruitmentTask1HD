@@ -23,7 +23,6 @@ const StateProvider = props => {
 
       const data = await response.json();
 
-      console.log('data', data);
       setFetchedData(data);
     } catch (err) {}
   };

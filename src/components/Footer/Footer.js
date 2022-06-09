@@ -1,4 +1,5 @@
 import React from 'react';
+
 import classes from './Footer.module.scss';
 import githubLogo from '../../assets/svg/github-logo.svg';
 import linkedinLogo from '../../assets/svg/linkedin-logo.svg';

@@ -1,4 +1,7 @@
 import React, { useContext } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 import StateContext from '../../store/state-context';
 import classes from './CardContent.module.scss';
 import arrowForward from '../../assets/svg/chevron-forward-outline.svg';
@@ -6,9 +9,6 @@ import arrowBack from '../../assets/svg/chevron-back-outline.svg';
 import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 
 //////////////////////////////////////////////////////////////////////////
 

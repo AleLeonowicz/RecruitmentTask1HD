@@ -1,4 +1,5 @@
 import React from 'react';
+
 import classes from './CardHeader.module.scss';
 
 const CardHeader = () => {

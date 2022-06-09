@@ -1,4 +1,5 @@
 import React from 'react';
+
 import classes from './FirstSlide.module.scss';
 import illustration from '../../assets/png/FormIcon.png';
 

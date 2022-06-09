@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+
 import classes from './GithubUserInfo.module.scss';
 import StateContext from '../../store/state-context';
 
