@@ -60,6 +60,8 @@ describe('ThirdSlide', () => {
     );
   });
 
+  //////////////////////////////////////////////
+
   test('submit button has property disabled set to true by default', () => {
     // given
     render(renderComponent());
@@ -70,6 +72,8 @@ describe('ThirdSlide', () => {
     // then
     expect(submitBtn).toBeDisabled();
   });
+
+  //////////////////////////////////////////////
 
   test('submit button has property disabled set to false when email input is valid and checkbox is checked', () => {
     // given
@@ -83,7 +87,6 @@ describe('ThirdSlide', () => {
       target: { value: 'ale.leonowicz@gmail.com' },
     });
     fireEvent.click(checkboxInput);
-    console.log('submitBtn', submitBtn);
 
     // then
     expect(submitBtn).not.toBeDisabled();

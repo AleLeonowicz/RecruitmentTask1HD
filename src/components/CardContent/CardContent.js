@@ -10,6 +10,13 @@ import FirstSlide from '../FirstSlide/FirstSlide';
 import SecondSlide from '../SecondSlide/SecondSlide';
 import ThirdSlide from '../ThirdSlide/ThirdSlide';
 
+const additionalProps =
+  process.env.NODE_ENV === 'test'
+    ? {
+        deviceType: 'desktop',
+      }
+    : {};
+
 //////////////////////////////////////////////////////////////////////////
 
 const CardContent = () => {
@@ -84,6 +91,7 @@ const CardContent = () => {
       responsive={responsive}
       containerClass={classes.carouselContainer}
       autoPlay={false}
+      ssr={true}
       autoPlaySpeed={10000000}
       arrows={false}
       renderButtonGroupOutside={true}
@@ -91,6 +99,7 @@ const CardContent = () => {
       swipeable={false}
       draggable={false}
       keyBoardControl={false}
+      {...additionalProps}
     >
       <FirstSlide />
       <SecondSlide />

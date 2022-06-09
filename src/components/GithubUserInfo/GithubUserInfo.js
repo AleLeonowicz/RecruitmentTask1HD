@@ -22,7 +22,10 @@ const GithubUserInfo = () => {
   };
 
   return (
-    <section className={classes.sectionWrapper}>
+    <section
+      className={classes.sectionWrapper}
+      data-testid="githubUserInfoPage"
+    >
       <div className={classes.container}>
         <div className={classes.container_imgContainer}>
           <img alt="github avatar" src={fetchedData.avatar_url}></img>
