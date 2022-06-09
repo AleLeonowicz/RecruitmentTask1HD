@@ -4,7 +4,7 @@ Visit the website here: [https://github-lookup-aleleonowicz.netlify.app/](https:
 
 An application that guides users through the checkout process, collects data, and displays queried GitHub account information.
 
-The code was prettified by VSCode's extension 'Prettier'..
+The code was prettified by VSCode's extension 'Prettier'.
 
 ## How to run the project
 
@@ -27,7 +27,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
