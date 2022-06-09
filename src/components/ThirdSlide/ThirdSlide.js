@@ -34,6 +34,7 @@ const ThirdSlide = () => {
             className={`${classes.thirdSlide_form_input} ${
               emailError !== '' && classes.thirdSlide_form_invalidInput
             }`}
+            data-testid="emailInput"
             type="email"
             id="email"
             name="email"
@@ -41,13 +42,19 @@ const ThirdSlide = () => {
             value={email}
           />
           {emailError !== '' && (
-            <p className={classes.thirdSlide_form_error}>{emailError}</p>
+            <p
+              className={classes.thirdSlide_form_error}
+              data-testid="emailErrorParagraph"
+            >
+              {emailError}
+            </p>
           )}
         </div>
         <div className={classes.thirdSlide_form_container2}>
           <input
             type="checkbox"
             id="termsAndServices"
+            data-testid="checkboxInput"
             onChange={() => {
               setIsChecked(!isChecked);
               if (!checkboxWasClicked) {
@@ -62,7 +69,9 @@ const ThirdSlide = () => {
             I agree with terms and services
           </label>
           {!isChecked && checkboxWasClicked && (
-            <p>Please agree to terms and services before submiting.</p>
+            <p data-testid="checkboxErrorParagraph">
+              Please agree to terms and services before submiting.
+            </p>
           )}
         </div>
         <div className={classes.thirdSlide_form_container3}>
@@ -70,6 +79,7 @@ const ThirdSlide = () => {
             className={`${classes.thirdSlide_form_submitBtn} ${
               disableSubmit && classes.thirdSlide_form_submitBtn_disabled
             }`}
+            data-testid="submitBtn"
             type="submit"
             value="Submit"
             disabled={disableSubmit}

@@ -67,6 +67,7 @@ const CardContent = () => {
             disableNextSlide && classes.carouselContainer_buttonRight_disabled
           }
           `}
+          data-testid="nextBtn"
           onClick={() => {
             next();
           }}

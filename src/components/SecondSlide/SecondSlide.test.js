@@ -27,6 +27,8 @@ describe('SecondSlide', () => {
     );
   });
 
+  //////////////////////////////////////////////
+
   test('renders error upon double spaces typed in first name input field', () => {
     // given
     render(renderComponent());
@@ -42,6 +44,8 @@ describe('SecondSlide', () => {
       'Multiple spaces are not allowed. Please try again.'
     );
   });
+
+  //////////////////////////////////////////////
 
   test('renders error upon single space input in first name input field', () => {
     // given
@@ -75,6 +79,8 @@ describe('SecondSlide', () => {
     );
   });
 
+  //////////////////////////////////////////////
+
   test('renders error upon double spaces typed in last name input field', () => {
     // given
     render(renderComponent());
@@ -90,6 +96,8 @@ describe('SecondSlide', () => {
       'Multiple spaces are not allowed. Please try again.'
     );
   });
+
+  //////////////////////////////////////////////
 
   test('renders error upon single space input in last name input field', () => {
     // given
