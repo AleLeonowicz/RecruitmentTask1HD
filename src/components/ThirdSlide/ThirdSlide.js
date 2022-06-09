@@ -35,12 +35,6 @@ const ThirdSlide = () => {
     }
   };
 
-  console.log(
-    '123123123',
-    fetchedData.message === 'Not Found' || isFetchingErr
-  );
-  console.log('fetchedData', fetchedData);
-  console.log('isFetchingErr', isFetchingErr);
   return (
     <section className={classes.thirdSlide}>
       <form
