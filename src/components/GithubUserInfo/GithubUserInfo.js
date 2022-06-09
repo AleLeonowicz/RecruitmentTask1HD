@@ -99,8 +99,8 @@ const GithubUserInfo = () => {
             data-testid="goBackToInitialCardBtn"
           >
             here
-          </button>{' '}
-          to fill the form again.
+          </button>
+          {' to fill the form again.'}
         </p>
       </div>
     </section>
