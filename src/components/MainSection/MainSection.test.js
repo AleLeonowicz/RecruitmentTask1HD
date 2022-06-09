@@ -1,6 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { act } from 'react-dom/test-utils';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
@@ -56,7 +55,7 @@ const renderComponent = () => (
 
 const server = setupServer(
   rest.get('https://api.github.com/users/AleLeonowicz', (req, res, ctx) => {
-    console.log('req', req);
+    // console.log('req', req);
     return res(ctx.json(githubUserMock));
   })
 );
@@ -94,14 +93,48 @@ describe('MainSection', () => {
 
     fireEvent.click(checkboxInput);
 
-    act(() => {
-      fireEvent.click(submitBtn);
-    });
+    fireEvent.click(submitBtn);
 
     await waitFor(() => screen.getByTestId('githubUserInfoPage'));
     const githubUserInfoPage = screen.getByTestId('githubUserInfoPage');
 
     // then
     expect(githubUserInfoPage).toBeInTheDocument();
+  });
+
+  test('renders the initial card after klicking on "here" button', async () => {
+    // given
+    render(renderComponent());
+    const nextBtn = screen.getByTestId('nextBtn');
+    fireEvent.click(nextBtn);
+
+    const firstNameInput = screen.getByTestId('firstNameInput');
+    const lastNameInput = screen.getByTestId('lastNameInput');
+    const githubInput = screen.getByTestId('githubInput');
+
+    //when
+    fireEvent.change(firstNameInput, { target: { value: 'Aleksandra' } });
+    fireEvent.change(lastNameInput, { target: { value: 'Leonowicz' } });
+    fireEvent.change(githubInput, { target: { value: 'AleLeonowicz' } });
+    fireEvent.click(nextBtn);
+
+    const emailInput = screen.getByTestId('emailInput');
+    const checkboxInput = screen.getByTestId('checkboxInput');
+    const submitBtn = screen.getByTestId('submitBtn');
+
+    fireEvent.change(emailInput, {
+      target: { value: 'ale.leonowicz@gmail.com' },
+    });
+
+    fireEvent.click(checkboxInput);
+    fireEvent.click(submitBtn);
+
+    await waitFor(() => screen.getByTestId('githubUserInfoPage'));
+    const goBackToInitialCardBtn = screen.getByTestId('goBackToInitialCardBtn');
+
+    fireEvent.click(goBackToInitialCardBtn);
+    // then
+    const initialCard = screen.getByTestId('initialCard');
+    expect(initialCard).toBeInTheDocument();
   });
 });

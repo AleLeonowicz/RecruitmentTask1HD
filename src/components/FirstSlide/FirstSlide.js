@@ -5,7 +5,7 @@ import illustration from '../../assets/png/FormIcon.png';
 
 const FirstSlide = () => {
   return (
-    <section className={classes.firstSlide}>
+    <section className={classes.firstSlide} data-testid="initialCard">
       <p>Looking for GitHub users? Let's find them!</p>
       <p>
         Please, fill out a simple form on the next pages. It will take only a

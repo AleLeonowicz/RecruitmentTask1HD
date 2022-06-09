@@ -94,8 +94,13 @@ const GithubUserInfo = () => {
       <div className={classes.goBackToForm}>
         <p className={classes.goBackToForm}>
           {'Not the account you were looking for? Klick '}
-          <button onClick={resetStateHandler}>here</button> to fill the form
-          again.
+          <button
+            onClick={resetStateHandler}
+            data-testid="goBackToInitialCardBtn"
+          >
+            here
+          </button>{' '}
+          to fill the form again.
         </p>
       </div>
     </section>

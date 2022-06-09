@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom';
 
 import Card from './Card';
@@ -12,15 +11,13 @@ const renderComponent = () => (
   </StateProvider>
 );
 
-describe.skip('CardContent', () => {
+describe('CardContent', () => {
   test('sets button attribute disabled to true when first name, last name, and github username input fields are filled with incorrect data', () => {
     //given
     render(renderComponent());
-    act(() => {
-      const nextBtn = screen.getByTestId('nextBtn');
 
-      fireEvent.click(nextBtn);
-    });
+    const nextBtn = screen.getByTestId('nextBtn');
+    fireEvent.click(nextBtn);
 
     const firstNameInput = screen.getByTestId('firstNameInput');
     const lastNameInput = screen.getByTestId('lastNameInput');
@@ -31,6 +28,6 @@ describe.skip('CardContent', () => {
     fireEvent.change(lastNameInput, { target: { value: 'Leonowicz  ' } });
     fireEvent.change(githubInput, { target: { value: 'AleLeonowicz--' } });
     //then
-    expect(nextBtn).toHaveAttribute('disabled');
+    expect(nextBtn).toBeDisabled();
   });
 });
