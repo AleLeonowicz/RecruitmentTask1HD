@@ -23,7 +23,7 @@ describe('ThirdSlide', () => {
 
     // then
     expect(paragraph).toHaveTextContent(
-      'Please type in a correct e-mail address and try again.'
+      'Please type in the correct e-mail address and try again.'
     );
   });
 
@@ -56,7 +56,7 @@ describe('ThirdSlide', () => {
 
     // then
     expect(paragraph).toHaveTextContent(
-      'Please agree to terms and services before submiting.'
+      'Please agree to terms and services before submitting.'
     );
   });
 

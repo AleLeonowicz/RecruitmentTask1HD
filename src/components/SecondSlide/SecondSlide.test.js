@@ -127,7 +127,7 @@ describe('SecondSlide', () => {
 
     // then
     expect(paragraph).toHaveTextContent(
-      'Invalid Github username. Please try again.'
+      'Invalid GitHub username. Please try again.'
     );
   });
 });
