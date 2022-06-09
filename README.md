@@ -27,6 +27,7 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.
+If not all tests have been run, then cli will prompt for `a` argument in the cli. This will run all the existent tests.
 
 ### `npm run build`
 

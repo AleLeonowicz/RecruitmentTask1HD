@@ -31,6 +31,8 @@ const CardContent = () => {
     firstNameError,
     lastNameError,
     gitUsernameError,
+    fetchedData,
+    setFetchedData,
   } = useContext(StateContext);
   const responsive = {
     desktop: {
@@ -38,6 +40,11 @@ const CardContent = () => {
       items: 1,
       slidesToSlide: 1,
     },
+  };
+
+  const goToNextSlideHandler = next => {
+    next();
+    fetchedData.message === 'Not Found' && setFetchedData({});
   };
 
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
@@ -80,7 +87,7 @@ const CardContent = () => {
           `}
           data-testid="nextBtn"
           onClick={() => {
-            next();
+            goToNextSlideHandler(next);
           }}
           disabled={disableNextSlide}
         >

@@ -21,6 +21,26 @@ const ThirdSlide = () => {
 
   const disableSubmit = !isChecked || email === '' || emailError !== '';
 
+  const submitButtonErrorMessage = () => {
+    if (fetchedData.message === 'Not Found') {
+      return 'No Github account matching your query was found. Please go back and try again.';
+    }
+
+    if (fetchedData.message?.includes('API rate limit exceeded')) {
+      return 'API rate limit exceeded';
+    }
+
+    if (isFetchingErr) {
+      return 'Something went wrong. Please try again.';
+    }
+  };
+
+  console.log(
+    '123123123',
+    fetchedData.message === 'Not Found' || isFetchingErr
+  );
+  console.log('fetchedData', fetchedData);
+  console.log('isFetchingErr', isFetchingErr);
   return (
     <section className={classes.thirdSlide}>
       <form
@@ -85,15 +105,11 @@ const ThirdSlide = () => {
             value="Submit"
             disabled={disableSubmit}
           />
-          {fetchedData.message === 'Not Found' && (
+          {(fetchedData.message === 'Not Found' ||
+            fetchedData.message?.includes('API rate limit exceeded') ||
+            isFetchingErr) && (
             <p className={classes.thirdSlide_form_error}>
-              No Github account matching your query was found. Please go back
-              and try again.
-            </p>
-          )}
-          {isFetchingErr && (
-            <p className={classes.thirdSlide_form_error}>
-              Something went wrong. Please try again.
+              {submitButtonErrorMessage()}
             </p>
           )}
         </div>
